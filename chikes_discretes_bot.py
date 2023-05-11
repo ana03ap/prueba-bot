@@ -77,7 +77,7 @@ def constelacion_ingresada(message):
          bot.register_next_step_handler(msg,constelacion_ingresada)
     else:# aquí si entro algun dato
         archivo = ""
-        archivo = "constelaciones/"+message.text+".txt"
+        archivo = "constelaciones\\"+message.text+".txt"
         plt.clf()
         constelacion = message.text
         main(archivo)

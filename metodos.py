@@ -24,7 +24,7 @@ def dibujarEstrellas(txt: str):
   return plt.savefig('estrellas.png')# guardar el grafico de las estrellas
 
 def start():
-  with open("constelaciones\stars.txt", 'r') as f:
+  with open("constelaciones/stars.txt", 'r') as f:
         coordenadas_constelaciones = {}
         for line in f:
             nombre = ""
@@ -64,11 +64,12 @@ def estrellas_constelacion(txt: str):
 #MAIN
 def main( constelacion = None):
   coordenadas_constelaciones= start()
-  if(constelacion):
+  if(constelacion):# es decir si ingresó un parametro de entrada 
      constelaciones = [constelacion]
   else:
-     constelaciones = ["constelaciones/Boyero.txt","constelaciones/Casiopea.txt", "constelaciones/Cazo.txt",
-                  "constelaciones/Cygnet.txt","constelaciones/Geminis.txt","constelaciones/Hydra.txt","constelaciones/OsaMayor.txt","constelaciones/OsaMenor.txt"]
+
+     constelaciones = ["constelaciones\Boyero.txt","constelaciones\Casiopea.txt", "constelaciones\Cazo.txt",
+                  "constelaciones\Cygnet.txt","constelaciones\Geminis.txt","constelaciones\Hydra.txt","constelaciones\OsaMayor.txt","constelaciones\OsaMenor.txt"]
   for c in constelaciones:
     estrellas  = estrellas_constelacion(c)
     for e in estrellas:# estrellas es una lista de listas
@@ -88,8 +89,3 @@ def main( constelacion = None):
   dibujarEstrellas("constelaciones\stars.txt")
   return plt.savefig('estrellas_constelacion.png')# guardar el grafico de las estrellas
 
-
-
-if __name__ == "__main__":
-  
-  dibujarEstrellas("constelaciones\stars.txt")
